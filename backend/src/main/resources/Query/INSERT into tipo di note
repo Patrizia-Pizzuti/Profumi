@@ -1,0 +1,5 @@
+INSERT INTO tipi_note (nome)
+values 
+('testa'),
+('cuore'),
+('fondo');

@@ -1,0 +1,10 @@
+INSERT INTO profumi (descrizione, formato, marca, nome, prezzo)
+VALUES 
+('Eau de Parfum','100 ml','Bois 1920','Frammenti',250.00),
+('Eau de Toilette', '100 ml', 'Versace', 'Dylan Blue PH', 84.00),
+('Eau de Parfum', '100 ml', 'Boadicea The Victorious', 'Ardent', 250.00),
+('Eau de Parfum', '100 ml','Bois 1920', 'ScorzaForza', 75.00),
+('Eau de Parfum', '100 ml', 'Creed', 'Carmina', 250.00),
+('Eau de Parfum', '100 ml', 'Creed', 'Aventus', 295.00),
+('Eau de Parfum', '100 ml', 'Dolce&Gabbana', 'Devotion', 113.00),
+('Parfum', '100 ml', 'Dior', 'Sauvage', 159.00);
