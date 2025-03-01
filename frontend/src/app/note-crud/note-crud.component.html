@@ -1,0 +1,56 @@
+<div class="crud-container">
+  <h2>Gestione Note</h2>
+
+  <!-- Form per Creare/Modificare una Nota -->
+  <div class="form-card">
+    <div>Inserisci / Modifica Nota</div>
+    <div>
+      <form (ngSubmit)="salvaNota()" #notaForm="ngForm" novalidate>
+        <mat-form-field appearance="outline">
+          <mat-label>Nome Nota</mat-label>
+          <input matInput [(ngModel)]="nota.nome" name="nome" required>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" type="submit" [disabled]="notaForm.invalid">
+          {{ nota.id ? 'Aggiorna' : 'Aggiungi' }} Nota
+        </button>
+        <button mat-button color="warn" type="button" (click)="resetForm()">Reset</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- 🔍 Barra di Ricerca per le Note -->
+<mat-form-field appearance="outline">
+<mat-label>Cerca Nota</mat-label>
+<input matInput [(ngModel)]="searchText" (input)="filtraNote()">
+</mat-form-field>
+
+<!-- Lista delle Note -->
+<div class="profumi-list-container">
+  <div *ngFor="let n of noteFiltrate">
+    <mat-card class="crud-card" appearance="outlined">
+      <mat-card-header class="crud-header">
+        <mat-card-title>{{ n.nomeNota }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-actions>
+        <button mat-icon-button color="accent" (click)="modificaNota(n)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button color="warn" (click)="openDeleteDialog(n.id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
+
+<!-- Dialog di Conferma Eliminazione -->
+<ng-template #deleteDialog>
+  <h2>Conferma Eliminazione</h2>
+  <p>Sei sicuro di voler eliminare questa nota?</p>
+  <div class="dialog-actions">
+    <button mat-button color="primary" (click)="eliminaNota(); closeDialog()">Conferma</button>
+    <button mat-button color="warn" (click)="closeDialog()">Annulla</button>
+  </div>
+</ng-template>

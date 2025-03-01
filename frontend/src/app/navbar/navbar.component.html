@@ -1,0 +1,41 @@
+<mat-toolbar class="primary header">
+  <span>Profumeria</span>
+
+  <div class="header-buttons-container">
+    <button mat-button routerLink="/">Home</button>
+    <button mat-button routerLink="/profumi">Profumi</button>
+    <button mat-button routerLink="/note">Note</button>
+  
+    <!-- Mostra i bottoni CRUD solo agli utenti con i ruoli giusti -->
+    <button *ngIf="authService.isLoggedIn() && authService.hasRole('ROLE_ADMIN')" 
+            mat-button routerLink="/crud-profumi">
+      Gestione Profumi
+    </button>
+    <button *ngIf="authService.isLoggedIn() && authService.hasRole('ROLE_ADMIN')" 
+            mat-button routerLink="/crud-note">
+      Gestione Note
+    </button>
+  
+    <!-- Se non è loggato, mostra Login e Registrazione -->
+    <button *ngIf="!authService.isLoggedIn()" mat-button routerLink="/login">
+      Login
+    </button>
+    <button *ngIf="!authService.isLoggedIn()" mat-button routerLink="/register">
+      Registrazione
+    </button>
+
+    <!-- 👇 Mostra il link solo se l'utente è Admin o SuperAdmin -->
+  <a *ngIf="authService.hasRole('ROLE_ADMIN') || authService.hasRole('ROLE_SUPER_ADMIN')" 
+  mat-button routerLink="/gestione-utenti">
+ Gestione Utenti
+</a>
+  
+    <!-- Se è loggato, mostra il bottone Logout -->
+    <button *ngIf="authService.isLoggedIn()" mat-button (click)="logout()">
+      Logout
+    </button>
+
+    
+  </div>
+
+</mat-toolbar>

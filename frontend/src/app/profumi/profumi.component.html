@@ -1,0 +1,22 @@
+<h2 class="profumo-title">Lista Profumi</h2>
+
+<!-- 🔍 Barra di Ricerca -->
+<div class="search-container">
+  <mat-form-field appearance="outline" class="search-bar">
+    <mat-label>Cerca Profumo</mat-label>
+    <input matInput [(ngModel)]="searchText" (input)="filtraProfumi()">
+  </mat-form-field>
+</div>
+
+<ul class="profumi-list">
+  <li *ngFor="let profumo of profumiFiltrati" class="profumo-card">
+    <a (click)="profumo.id ? viewProfumoDetails(profumo.id) : null">
+      {{ profumo.nome }} - {{ profumo.marca }}
+    </a>
+  </li>
+</ul>
+
+<!-- Bottone per tornare alla home -->
+<button mat-raised-button color="primary" (click)="router.navigate(['/'])">
+  <mat-icon>home</mat-icon> Home
+</button>

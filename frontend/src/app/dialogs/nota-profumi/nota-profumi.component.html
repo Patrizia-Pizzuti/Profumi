@@ -1,0 +1,12 @@
+<h2 mat-dialog-title>Profumi con la nota: <i>{{data.selectedNota.nome}}</i></h2>
+<mat-dialog-content>
+  <ul *ngIf="data.profumi.length > 0; else noProfumi" class="dialog-container">
+    <div *ngFor="let profumo of data.profumi" (click)="navigateToProfumo(profumo)" style="cursor: pointer;">
+      <li>
+        <span>{{ profumo.nome }} - {{ profumo.marca }}</span>
+      </li>
+    </div>
+  </ul>
+
+  <ng-template #noProfumi> Nessun profumo trovato</ng-template>
+</mat-dialog-content>

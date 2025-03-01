@@ -1,0 +1,87 @@
+/* .note-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  padding: 20px;
+  justify-content: center;
+  text-align: center;
+}
+
+.note-item {
+  background: #f4a460;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  color: white;
+}
+
+.note-item:hover {
+  background: #e0e0e0;
+  transform: scale(1.05);
+} */
+
+.note-layout {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  gap: 30px;
+}
+
+.note-container {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.card-container {
+  display: flex;
+  width: 250px;
+  color: white;
+  border-radius: 12px;
+  background-color: #f4a460;
+  cursor: pointer;
+}
+
+.card-container:hover {
+  background-color: #E08E45;
+  transform: scale(1.05);
+  transition: 0.3s;
+}
+
+mat-card {  
+  background-color: transparent;
+  border: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-container {
+  gap: 50px;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  padding-bottom: 10px;
+}
+
+/* 🔹 Contenitore per centrare la barra */
+.search-container {
+  display: flex;
+  justify-content: center; /* 🔹 Centra orizzontalmente */
+  align-items: center;
+  margin-bottom: 20px; /* 🔹 Aggiunge spazio sotto */
+}
+
+/* 🔹 Barra di ricerca più piccola */
+.small-search-bar {
+  width: 250px; /* 🔹 Regola la larghezza */
+}
+

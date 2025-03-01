@@ -1,0 +1,35 @@
+/* 🌸 Stile generale della pagina */
+body {
+    background: linear-gradient(to bottom, #a8e6cf, #ffaaa5); /* Celeste -> Rosa sfumato */
+    color: #4a4a4a; /* Testo grigio scuro per un buon contrasto */
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* 📌 Contenitore centrale */
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Occupa tutta la schermata */
+    text-align: center;
+  }
+  
+  /* 🎀 Titolo ben stilizzato */
+  h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ff6b81; /* Rosa acceso */
+    background: white;
+    padding: 20px 40px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  /* ✨ Effetto al passaggio del mouse */
+  h1:hover {
+    transform: scale(1.05);
+  }
+  

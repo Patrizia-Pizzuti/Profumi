@@ -1,0 +1,20 @@
+mat-toolbar {
+  background-color: #5a3e2b; /* Marrone elegante */
+  color: white;
+  padding: 10px;
+}
+
+button {
+  font-size: 14px;
+  color: white;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-buttons-container {
+  display: flex;
+  gap: 8px;
+}

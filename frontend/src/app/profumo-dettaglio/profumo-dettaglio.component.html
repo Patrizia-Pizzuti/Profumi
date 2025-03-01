@@ -1,0 +1,50 @@
+<div class="profumo-dettaglio-container">
+  <!-- Titolo e descrizione -->
+  <h2>{{ profumo?.nome }} - {{ profumo?.marca }}</h2>
+  <p>{{ profumo?.descrizione }}</p>
+
+  <img 
+  *ngIf="profumo?.immagineUrl" 
+  [src]="'/' + profumo?.immagineUrl" 
+  alt="{{ profumo?.nome }}" 
+  class="profumo-img">
+
+
+  <!-- Note di Testa -->
+  <h3>Note di Testa</h3>
+  <ul *ngIf="noteTesta.length > 0; else noTesta" class="note-list">
+    <li *ngFor="let nota of noteTesta">
+      {{ nota.nomeNota }}
+    </li>
+  </ul>
+  <ng-template #noTesta>
+    <p>Nessuna nota di testa</p>
+  </ng-template>
+
+  <!-- Note di Cuore -->
+  <h3>Note di Cuore</h3>
+  <ul *ngIf="noteCuore.length > 0; else noCuore" class="note-list">
+    <li *ngFor="let nota of noteCuore">
+      {{ nota.nomeNota }}
+    </li>
+  </ul>
+  <ng-template #noCuore>
+    <p>Nessuna nota di cuore</p>
+  </ng-template>
+
+  <!-- Note di Fondo -->
+  <h3>Note di Fondo</h3>
+  <ul *ngIf="noteFondo.length > 0; else noFondo" class="note-list">
+    <li *ngFor="let nota of noteFondo">
+      {{ nota.nomeNota }}
+    </li>
+  </ul>
+  <ng-template #noFondo>
+    <p>Nessuna nota di fondo</p>
+  </ng-template>
+
+  <!-- Bottone per tornare alla lista profumi -->
+  <button mat-raised-button color="primary" (click)="router.navigate(['/profumi'])">
+    <mat-icon>arrow_back</mat-icon> Torna ai Profumi
+  </button>
+</div>

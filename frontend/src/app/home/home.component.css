@@ -1,0 +1,66 @@
+.home-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Impostazioni generali */
+body {
+  background: linear-gradient(to right, #fdf6e3, #fae3d9);
+  font-family: 'Arial', sans-serif;
+  color: #5a3e2b;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Contenitore principale */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  /* width: 90%; */
+  width: auto;
+  height: auto;
+  max-width: 400px;
+  max-height: 200px;
+}
+
+/* Titolo */
+h1 {
+  font-size: 2.5rem;
+  color: #d2691e;
+  margin-bottom: 30px;
+}
+
+/* Bottoni al centro */
+.example-button-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* Contenitore dei bottoni */
+.example-flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Icone nei pulsanti */
+mat-icon {
+  margin-right: 8px;
+}

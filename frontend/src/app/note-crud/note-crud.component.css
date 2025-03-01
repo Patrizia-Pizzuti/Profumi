@@ -1,0 +1,112 @@
+/* Contenitore principale */
+.crud-container {
+  max-width: 650px;
+  margin: auto;
+  text-align: center;
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Form per Creare/Modificare le Note */
+.form-card {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15);
+  margin-bottom: 20px;
+  border-left: 4px solid #ccc;
+}
+
+/* Campi di input */
+.mat-form-field {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+/* Contenitore delle note */
+.profumi-list-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+/* Stile uniforme delle card */
+.crud-card {
+  width: 220px; /* Grandezza fissa per tutte le card */
+  height: 160px; /* Altezza più grande per gestire nomi lunghi */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.12);
+  border: 1px solid #ccc;
+  text-align: center;
+  transition: transform 0.2s ease-in-out;
+}
+
+.crud-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Titolo della nota */
+.crud-card-title {
+  font-size: 0.85rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 6px;
+  color: #495057;
+  min-height: 40px; /* Altezza fissa per evitare spostamenti */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 90%;
+}
+
+/* Mostra il nome completo al passaggio del mouse */
+.crud-card-title:hover {
+  overflow: visible;
+  white-space: normal;
+  text-overflow: clip;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  padding: 4px;
+}
+
+/* Contenitore dei bottoni */
+.mat-card-actions {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* Bottoni ben bilanciati */
+.mat-card-actions button {
+  min-width: 40px;
+  max-width: 45px;
+  height: 35px;
+}
+
+/* 🔍 Barra di ricerca - Spostata più in basso */
+.search-bar {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px; 
+  margin-bottom: 15px;
+}
+
+.search-bar mat-form-field {
+  width: 300px;
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.08);
+}

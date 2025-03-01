@@ -1,0 +1,94 @@
+.crud-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
+/* Stile della scheda di inserimento/modifica */
+.form-card {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Sezione per le note */
+.note-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+button {
+  margin-top: 10px;
+}
+
+/* Contenitore delle card */
+.profumi-list-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Stile delle card per i profumi */
+.crud-card {
+  width: 350px; /* Grandezza uniforme per tutte le card */
+  height: 550px; /* Altezza fissa per evitare spostamenti */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between; /* Mantiene lo spazio tra gli elementi */
+  padding: 15px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+/* Fissa l'altezza del titolo in modo che non sposti gli altri elementi */
+.crud-card-title {
+  min-height: 50px; /* Altezza minima per titoli più corti */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 5px;
+}
+
+/* Stile dell'immagine all'interno della card */
+.crud-card img {
+  width: 80%; /* Larghezza dell'immagine */
+  max-height: 180px;
+  object-fit: contain;
+  display: block;
+  margin: 10px auto;
+  border-radius: 8px;
+  padding: 8px;
+  background: #f1f1f1;
+  border: 1px solid #ccc;
+}
+
+/* Contenitore della descrizione */
+.crud-card-content {
+  flex-grow: 1; /* Permette alla descrizione di adattarsi */
+  max-height: 100px; /* Altezza fissa per uniformare le card */
+  overflow-y: auto; /* Abilita lo scroll se necessario */
+  padding: 10px;
+  text-align: center;
+}
+
+/* Azioni della card (pulsanti) */
+.crud-card-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}

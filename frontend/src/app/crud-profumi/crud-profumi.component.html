@@ -1,0 +1,108 @@
+<div class="crud-container">
+  <h2>Gestione Profumi</h2>
+
+  <!-- 🔍 Barra di Ricerca -->
+  <div class="search-container">
+    <mat-form-field appearance="outline" class="search-bar">
+      <mat-label>Cerca Profumo</mat-label>
+      <input matInput [(ngModel)]="searchText" (input)="filtraProfumi()">
+    </mat-form-field>
+  </div>
+
+  <!-- Form per Creare/Modificare un Profumo -->
+  <div class="form-card">
+    <div>Inserisci / Modifica Profumo</div>
+    <div>
+      <form (ngSubmit)="salvaProfumo()" #profumoForm="ngForm" novalidate>
+        <mat-form-field appearance="outline">
+          <mat-label>Nome</mat-label>
+          <input matInput [(ngModel)]="profumo.nome" name="nome" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Marca</mat-label>
+          <input matInput [(ngModel)]="profumo.marca" name="marca" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Descrizione</mat-label>
+          <textarea matInput [(ngModel)]="profumo.descrizione" name="descrizione" required></textarea>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Formato</mat-label>
+          <input matInput [(ngModel)]="profumo.formato" name="formato" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Prezzo (€)</mat-label>
+          <input matInput type="number" [(ngModel)]="profumo.prezzo" name="prezzo" required min="0">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>URL Immagine</mat-label>
+          <input matInput [(ngModel)]="profumo.immagineUrl" name="immagineUrl">
+        </mat-form-field>
+
+        <!-- Sezione per modificare le Note -->
+        <div class="note-section">
+          <h3>Note del Profumo</h3>
+          <button mat-mini-fab color="accent" type="button" (click)="aggiungiNota()">
+            <mat-icon>add</mat-icon>
+          </button>
+        </div>
+
+        <div *ngFor="let nota of profumo.note; let i = index" class="note-container">
+          <mat-form-field appearance="outline">
+            <mat-label>Nota</mat-label>
+            <mat-select [(ngModel)]="nota.id" name="notaId{{i}}" required>
+              <mat-option *ngFor="let n of noteDisponibili" [value]="n.id">
+                {{ n.nomeNota }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Tipo Nota</mat-label>
+            <mat-select [(ngModel)]="nota.tipoNotaId" name="tipoNota{{i}}" required>
+              <mat-option [value]="1">Testa</mat-option>
+              <mat-option [value]="2">Cuore</mat-option>
+              <mat-option [value]="3">Fondo</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <button mat-icon-button color="warn" type="button" (click)="rimuoviNota(i)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+
+        <button mat-raised-button color="primary" type="submit" [disabled]="profumoForm.invalid">
+          Salva
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Lista Profumi -->
+<div class="profumi-list-container">
+  <div *ngFor="let p of profumiFiltrati">
+    <mat-card class="crud-card">
+      <mat-card-header class="crud-card-title">
+        <mat-card-title>{{ p.nome }} - {{ p.marca }}</mat-card-title>
+      </mat-card-header>
+      <img mat-card-image [src]="p.immagineUrl" [alt]="p.nome">
+      <mat-card-content class="crud-card-content">
+        <p>{{ p.descrizione }}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-icon-button color="accent" (click)="modificaProfumo(p)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button color="warn" (click)="openDeleteDialog(p.id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

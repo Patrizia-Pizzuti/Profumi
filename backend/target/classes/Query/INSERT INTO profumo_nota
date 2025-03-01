@@ -1,0 +1,41 @@
+INSERT INTO profumiENote (profumo_id, nota_id, tipo_nota_id)
+VALUES
+-- Frammenti (Bois 1920)
+(1, 1, 1), -- magnolia (testa)
+(1, 4, 2), -- rosa (cuore)
+(1, 20, 3), -- patchouli (fondo)
+
+-- Dylan Blue PH (Versace)
+(2, 6, 1), -- pepe nero (testa)
+(2, 7, 2), -- foglia di violetta (cuore)
+(2, 8, 3), -- papiro (fondo)
+
+-- Ardent (Boadicea The Victorious)
+(3, 9, 1), -- cera di api (testa)
+(3, 10, 2), -- gelsomino (cuore)
+(3, 21, 3), -- benzoino (fondo)
+
+-- ScorzaForza (Bois 1920)
+(4, 35, 1), -- limone (testa)
+(4, 36, 2), -- mandarino (cuore)
+(4, 37, 3), -- petit grain (fondo)
+
+-- Carmina (Creed)
+(5, 32, 1), -- rosa turca (testa)
+(5, 33, 2), -- zafferano (cuore)
+(5, 24, 3), -- legno di cedro (fondo)
+
+-- Aventus (Creed)
+(6, 25, 1), -- bergamotto (testa)
+(6, 28, 2), -- ribes nero (cuore)
+(6, 30, 3), -- note acquatiche (fondo)
+
+-- Devotion (Dolce&Gabbana)
+(7, 15, 1), -- vaniglia (testa)
+(7, 16, 2), -- caramello (cuore)
+(7, 17, 3), -- incenso (fondo)
+
+-- Sauvage (Dior)
+(8, 5, 1), -- ambroxan (testa)
+(8, 6, 2), -- pepe nero (cuore)
+(8, 18, 3); -- muschio (fondo)

@@ -1,0 +1,51 @@
+.profumo-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.search-bar {
+  width: 300px;
+}
+
+.profumi-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.profumo-card {
+  width: 80%;
+  max-width: 500px;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+  text-align: center;
+  background: #fff;
+}
+
+.profumo-card a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #333;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.profumo-card:hover {
+  background: #f9f9f9;
+}
+
+button {
+  display: block;
+  margin: 20px auto;
+}
